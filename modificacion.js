@@ -113,11 +113,13 @@ function getLastId(){
 }
 
 //borrar row
-function borrar(id){
+function borrar(obj,id){
   var request = new XMLHttpRequest();
   request.open('POST', 'borrar.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.send("id=" + id);
+  console.log(obj.parentNode.parentNode);
+  document.getElementById("tabla-usuarios").deleteRow(obj.parentNode.parentNode.rowIndex);
 }
 
 //insertar row
