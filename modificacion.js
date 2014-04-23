@@ -79,7 +79,6 @@ function modificar(obj){
   };
 }
 
-
 //Salvando las modificaciones
 function salvarMod(obj, valor){
   var key = obj.id;
@@ -94,4 +93,56 @@ function salvarMod(obj, valor){
   request.send("key=" + key +"&value=" + value);
 
   obj.replaceChild(document.createTextNode(valor), obj.firstChild);
+}
+
+function getLastId(){
+  return 3;
+}
+
+//insertar row
+function insertRow(){
+  var rowID = getLastId();
+  var table = document.getElementById("tabla-usuarios");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  cell1.innerHTML = "nombre";
+  cell1.className = "celda";
+  cell1.id = "nombre-" + rowID;
+  cell1.setAttribute("ondblclick", "modificar(this)");
+
+  cell2.innerHTML = "apellido";
+  cell2.className = "celda";
+  cell2.id = "apellido-" + rowID;
+  cell2.setAttribute("ondblclick", "modificar(this)");
+
+  cell3.innerHTML = "direccion";
+  cell3.className = "celda";
+  cell3.id = "direccion-" + rowID;
+  cell3.setAttribute("ondblclick", "modificar(this)");
+
+  cell4.innerHTML = "codigo";
+  cell4.className = "celda";
+  cell4.id = "codigo-" + rowID;
+  cell4.setAttribute("ondblclick", "modificar(this)");
+
+  cell5.innerHTML = "ciudad";
+  cell5.className = "celda";
+  cell5.id = "ciudad-" + rowID;
+  cell5.setAttribute("ondblclick", "modificar(this)");
+
+  cell6.innerHTML = "hijos";
+  cell6.className = "celda";
+  cell6.id = "hijos-" + rowID;
+  cell6.setAttribute("ondblclick", "modificar(this)");
+
+  cell7.innerHTML = "email";
+  cell7.className = "celda";
+  cell7.id = "email-" + rowID;
+  cell7.setAttribute("ondblclick", "modificar(this)");
 }

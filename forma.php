@@ -40,6 +40,7 @@
 			}
 		 ?>
 	</table>
+	<button onclick="insertRow()">Insertar fila</button>
 <?php mysqli_close($con); ?>
 </body>
 </html>
