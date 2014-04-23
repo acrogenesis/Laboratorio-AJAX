@@ -130,6 +130,7 @@ function insertRow(){
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
   cell1.innerHTML = "nombre";
   cell1.className = "celda";
   cell1.id = "nombre-" + rowID;
@@ -164,4 +165,7 @@ function insertRow(){
   cell7.className = "celda";
   cell7.id = "email-" + rowID;
   cell7.setAttribute("ondblclick", "modificar(this)");
+
+  cell8.innerHTML = "<button onclick='borrar(" + rowID +")'>Borrar</button>";
+  cell8.className = "celda";
 }

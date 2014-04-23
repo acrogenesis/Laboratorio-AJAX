@@ -24,6 +24,7 @@
 			<th>Ciudad</th>
 			<th>Hijos</th>
 			<th>Email</th>
+			<th>Borrar</th>
 
 		</tr>
 		<?php
@@ -36,6 +37,7 @@
 				echo "<td id='ciudad-" . $row["id"] . "' class='celda' ondblclick='modificar(this)'>" . $row["ciudad"] . "</td>";
 				echo "<td id='hijos-" . $row["id"] . "' class='celda' ondblclick='modificar(this)'>" . $row["hijos"] . "</td>";
 				echo "<td id='email-" . $row["id"] . "' class='celda' ondblclick='modificar(this)'>" . $row["email"] . "</td>";
+				echo "<td class='celda'><button onclick='borrar(" . $row["id"] .")'>Borrar</button></td>";
 				echo "</tr>";
 			}
 		 ?>
