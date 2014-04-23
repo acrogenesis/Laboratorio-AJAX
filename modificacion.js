@@ -96,11 +96,30 @@ function salvarMod(obj, valor){
 }
 
 function getLastId(){
-  return 3;
+  var result = 0;
+  request = new XMLHttpRequest();
+  request.open('GET', 'lastID.php', false);
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400){
+      // Success!
+      result = request.responseText;
+      // console.log(result);
+    }
+  };
+  request.send();
+
+  return result;
 }
 
 //insertar row
 function insertRow(){
+
+  var request = new XMLHttpRequest();
+  request.open('POST', 'insertar.php', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send();
+
   var rowID = getLastId();
   var table = document.getElementById("tabla-usuarios");
   var row = table.insertRow(-1);
@@ -136,7 +155,7 @@ function insertRow(){
   cell5.id = "ciudad-" + rowID;
   cell5.setAttribute("ondblclick", "modificar(this)");
 
-  cell6.innerHTML = "hijos";
+  cell6.innerHTML = "0";
   cell6.className = "celda";
   cell6.id = "hijos-" + rowID;
   cell6.setAttribute("ondblclick", "modificar(this)");
