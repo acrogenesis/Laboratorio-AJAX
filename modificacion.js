@@ -112,6 +112,14 @@ function getLastId(){
   return result;
 }
 
+//borrar row
+function borrar(id){
+  var request = new XMLHttpRequest();
+  request.open('POST', 'borrar.php', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send("id=" + id);
+}
+
 //insertar row
 function insertRow(){
 
